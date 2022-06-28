@@ -12,11 +12,11 @@ jobs:
     - name: Setup Nuget.exe
       uses: nuget/setup-nuget@v1.0.5
     - name: Restore NuGet package
-      run: |
-        nuget restore ./NugetRestoreFail/NugetRestoreFail.csproj
+      run:
+        nuget restore ./test/NugetRestoreFail.csproj
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '6.0.x'
     - name: Run Unit Test suite
-      run: dotnet test ./NugetRestoreFail/NugetRestoreFail.csproj
+      run: dotnet test ./test/NugetRestoreFail.csproj
